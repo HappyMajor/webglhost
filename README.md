@@ -12,4 +12,4 @@ Nodejs webserver used as the host for my webgl client
 
 # What to be careful of
 
-1. You need to disable compression in Unity before building the WebGl client```files>build settings>player settings>Publishing settings```
+1. You need to disable compression in Unity before building the WebGl client```files>build settings>player settings>Publishing settings``` (Otherwise you need HTTPS for br files)
