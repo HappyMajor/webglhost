@@ -1,16 +1,14 @@
-'use strict';
-
 const express = require('express');
-
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
-
-// App
+var compression  = require('compression');
 const app = express();
-app.get('/', (req, res) => {
-  res.sendFile(__dirname +'/index.html');
-});
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.use(compression());
+app.use(function(req, res, next) {
+    next();
+});
+app.use(express.static(__dirname + '/client'));
+
+
+app.listen(8080, () => {
+console.log('Server has started!')
+});
